@@ -1,0 +1,2 @@
+ipython
+nltk-3.2.2

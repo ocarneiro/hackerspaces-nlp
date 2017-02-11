@@ -1,0 +1,1 @@
+grep -i 'arduino' -l * |while read arquivo; do echo `wc -l $arquivo`; done|sort -n -r
