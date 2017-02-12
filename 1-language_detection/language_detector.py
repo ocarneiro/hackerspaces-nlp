@@ -5,14 +5,14 @@ import langdetector
 import json
 
 def detect_file_languages():
-    text_files = glob('data/*.txt')
+    text_files = glob('../data/*.txt')
     languages = {}
 
     for filename in text_files:
         contents = Path(filename).read_text()
         contents = contents.replace('\n', '. ')
         language = langdetector.detect_language(contents)
-        languages[filename] = language
+        languages[filename.replace('../data/','')] = language
 
     return languages
 
