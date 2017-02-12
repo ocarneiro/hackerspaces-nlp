@@ -1,3 +1,4 @@
 data
 *.swp
 venv*
+__pycache__

@@ -26,11 +26,9 @@ def find_two_terms(term1, term2):
     details = {}
     for h in contains_both:
         details[h] = {}
-        details[h][term1] = list1[h]
-        details[h][term2] = list2[h]
-        for b in details[h][term1]:
-            if b in details[h][term2]:
-                details[h]['**both**'] = b
+        details[h][term1] = [x for x in list1[h] if x not in list2[h]]
+        details[h][term2] = [x for x in list2[h] if x not in list1[h]]
+        details[h]['**both**'] = [x for x in list1[h] if x in list2[h]]
 
     return details
 
